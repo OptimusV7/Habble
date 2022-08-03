@@ -47,4 +47,4 @@ jobs:
         
       - name: Restart the app
         run: |
-          systemctl sudo restart habbleservicefile.service
+          systemctl restart habbleservicefile.service
