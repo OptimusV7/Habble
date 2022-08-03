@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero -->
+<div class="container position-relative content-space-t-2 content-space-t-md-2 content-space-t-lg-2">
+    <div class="row justify-content-lg-between align-items-lg-center">
+        <div class="col-md-10 col-lg-6">
+            <!-- Heading -->
+            
+            <div class="mb-7">
+                <h4 class="display-4 mb-3" >
+                    Build your<br>
+
+                    <span class="text-primary text-highlight-warning"  style="color:#1c9941 !important;" >
+                        <span class="js-typedjs" data-hs-typed-options='{
+                        "strings": ["custom", "future", "statup"],
+                        "typeSpeed": 90,
+                        "loop": true,
+                        "backSpeed": 30,
+                        "backDelay": 2500
+                      }'></span>
+                    </span>application with us
+                </h4>
+                @*<h3 class="display-4 mb-3">application with us</h3>*@
+                <p class="lead">Whatever your goal - we will get your there.</p>
+            </div>
+            <!-- End Title & Description -->
+
+            <div class="d-none d-lg-block">
+                <img class="img-fluid" src="assets/svg/oc-growing.svg" alt="Image Description">
+            </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="col-lg-5">
+            <!-- Form -->
+            <form class="js-validate needs-validation" novalidate>
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-header border-bottom text-center">
+                        <h4 class="card-header-title">Reach out and get a tailored application  <span class="badge bg-warning text-dark rounded-pill ms-1">starting at $59</span></h4>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row gx-3">
+                            <div class="col-sm-6">
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="firstname">First name</label>
+                                    <input type="text" class="form-control form-control-lg" name="firstname" id="firstname" placeholder="First name" aria-label="First name" required>
+                                    <span class="invalid-feedback">Please enter your first name</span>
+                                </div>
+                                <!-- End Form -->
+                            </div>
+                            <!-- End Col -->
+
+                            <div class="col-sm-6">
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="lastname">Last name</label>
+                                    <input type="text" class="form-control form-control-lg" name="lastname" id="lastname" placeholder="Last name" aria-label="Last name" required>
+                                    <span class="invalid-feedback">Please enter your last name</span>
+                                </div>
+                                <!-- End Form -->
+                            </div>
+                            <!-- End Col -->
+                        </div>
+                        <!-- End Row -->
+                        <!-- Form -->
+                        <div class="mb-4">
+                            <label class="form-label" for="email">Email address</label>
+                            <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="email@site.com" aria-label="email@site.com" required>
+                            <span class="invalid-feedback">Please enter your email address</span>
+                        </div>
+                        <!-- End Form -->
+
+                        <!-- Form -->
+                        <div class="mb-4">
+                            <label class="form-label" for="projectType">Type of Project</label>
+                            <input type="text" class="form-control form-control-lg" name="projectType" id="projectType" placeholder="e.g Ecommerce System" aria-label="e.g Ecommerce System" required>
+                            <span class="invalid-feedback">Project</span>
+                        </div>
+                        <!-- End Form -->
+
+                        <div class="row gx-3">
+                            <div class="col-sm-6">
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="budget">Budget</label>
+                                    <input type="number" class="form-control form-control-lg" name="budget" id="budget" placeholder="Amount in $" aria-label="Amount in $" required>
+                                    <span class="invalid-feedback">Your budget</span>
+                                </div>
+                                <!-- End Form -->
+                            </div>
+                            <!-- End Col -->
+
+                            <div class="col-sm-6">
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="timeframe">Time Frame</label>
+                                    <input type="text" class="form-control form-control-lg" name="timeframe" id="Time Frame" placeholder="e.g 6 months" aria-label="e.g 6 months" required>
+                                    <span class="invalid-feedback">Expected time start to end</span>
+                                </div>
+                                <!-- End Form -->
+                            </div>
+                            <!-- End Col -->
+                        </div>
+                        <!-- End Row -->
+                        <!-- Check -->
+                        <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="signupHeroFormPrivacyCheck" name="signupFormPrivacyCheck" required>
+                            <label class="form-check-label small" for="signupHeroFormPrivacyCheck"> By submitting this form I have read and acknowledged the <a asp-controller="Home" asp-action="Privacy" >Privacy Policy</a></label>
+                            <span class="invalid-feedback">Please accept our Privacy Policy.</span>
+                        </div>
+                        <!-- End Check -->
+
+                        <div class="d-grid mb-3">
+                            <button type="submit"  class="btn btn-success btn-lg">Get in Touch</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Card -->
+            </form>
+            <!-- End Form -->
+        </div>
+        <!-- End Col -->
+    </div>
+    <!-- End Row -->
+</div>
+<!-- End Hero -->
