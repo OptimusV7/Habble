@@ -43,9 +43,8 @@ jobs:
 
       # We will output publish files to the folder we previously created
       - name: Publish
-        run: dotnet publish -c Release -o /var/www/publishHabble
+        run: dotnet publish -c Release -o /var/www/publishHabble/publish
         
       - name: Restart the app
         run: |
-          export XDG_RUNTIME_DIR=/run/user/$(id -u)
-          systemctl --user restart habbleservicefile.service
+          systemctl sudo restart habbleservicefile.service
