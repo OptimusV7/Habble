@@ -6,10 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-app.UseForwardedHeaders(new ForwardedHeadersOptions
+/*app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-});
+});*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
