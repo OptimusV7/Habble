@@ -12,8 +12,8 @@ builder.Services.AddControllersWithViews();
 //Options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
 
 //DI Prod
-builder.services.adddbcontext<applicationdbcontext>(options =>
-options.usesqlserver(builder.configuration.getconnectionstring("prodconnection")));
+builder.Services.AddDbContext<ApplicationDBContext>(Options =>
+Options.UseSqlServer(builder.Configuration.GetConnectionString("ProdConnection")));
 
 var app = builder.Build();
 app.UseForwardedHeaders(new ForwardedHeadersOptions
