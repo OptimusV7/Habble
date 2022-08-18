@@ -8,12 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //DI Dev
-builder.Services.AddDbContext<ApplicationDBContext>(Options =>
-Options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+/*builder.Services.AddDbContext<ApplicationDBContext>(Options =>
+Options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));*/
 
 //DI Prod
-/*builder.Services.AddDbContext<ApplicationDBContext>(Options =>
-Options.UseSqlServer(builder.Configuration.GetConnectionString("ProdConnection")));*/
+builder.Services.AddDbContext<ApplicationDBContext>(Options =>
+Options.UseSqlServer(builder.Configuration.GetConnectionString("ProdConnection")));
 
 var app = builder.Build();
 app.UseForwardedHeaders(new ForwardedHeadersOptions
