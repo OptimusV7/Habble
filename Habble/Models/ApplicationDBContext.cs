@@ -1,6 +1,15 @@
-﻿namespace Habble.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+
+namespace Habble.Models
 {
-    public class ApplicationDBContext
+    public class ApplicationDBContext : DbContext
     {
+        public ApplicationDBContext(DbContextOptions options) : base(options)
+        {
+
+        }
+        public DbSet<Application>? Applications { get; set; }
+
     }
 }

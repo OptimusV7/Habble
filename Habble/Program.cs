@@ -1,9 +1,19 @@
+using Habble.Models;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//DI Dev
+builder.Services.AddDbContext<ApplicationDBContext>(Options =>
+Options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+
+//DI Prod
+/*builder.Services.AddDbContext<ApplicationDBContext>(Options =>
+Options.UseSqlServer(builder.Configuration.GetConnectionString("ProdConnection")));*/
 
 var app = builder.Build();
 app.UseForwardedHeaders(new ForwardedHeadersOptions

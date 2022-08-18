@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model Habble.Models.Application;
 
 <!-- Hero -->
 <div class="container position-relative content-space-t-2 content-space-t-md-2 content-space-t-lg-2">
@@ -35,7 +36,7 @@
 
         <div class="col-lg-5">
             <!-- Form -->
-            <form class="js-validate needs-validation" novalidate>
+            <form asp-controller="Applications" asp-action="Create">
                 <!-- Card -->
                 <div class="card">
                     <div class="card-header border-bottom text-center">
@@ -43,13 +44,14 @@
                     </div>
 
                     <div class="card-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="row gx-3">
                             <div class="col-sm-6">
                                 <!-- Form -->
                                 <div class="mb-4">
                                     <label class="form-label" for="firstname">First name</label>
-                                    <input type="text" class="form-control form-control-lg" name="firstname" id="firstname" placeholder="First name" aria-label="First name" required>
-                                    <span class="invalid-feedback">Please enter your first name</span>
+                                    <input type="text" class="form-control form-control-lg" name="Firstname" id="firstname" placeholder="First name" aria-label="First name" required>
+                                    <span asp-validation-for="Firstname" class="text-danger"></span>
                                 </div>
                                 <!-- End Form -->
                             </div>
@@ -59,8 +61,8 @@
                                 <!-- Form -->
                                 <div class="mb-4">
                                     <label class="form-label" for="lastname">Last name</label>
-                                    <input type="text" class="form-control form-control-lg" name="lastname" id="lastname" placeholder="Last name" aria-label="Last name" required>
-                                    <span class="invalid-feedback">Please enter your last name</span>
+                                    <input type="text" class="form-control form-control-lg" name="Lastname" id="lastname" placeholder="Last name" aria-label="Last name" required>
+                                    <span asp-validation-for="Lastname" class="text-danger"></span>
                                 </div>
                                 <!-- End Form -->
                             </div>
@@ -70,16 +72,16 @@
                         <!-- Form -->
                         <div class="mb-4">
                             <label class="form-label" for="email">Email address</label>
-                            <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="email@site.com" aria-label="email@site.com" required>
-                            <span class="invalid-feedback">Please enter your email address</span>
+                            <input type="email" class="form-control form-control-lg" name="Email" id="email" placeholder="email@site.com" aria-label="email@site.com" required>
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <!-- End Form -->
 
                         <!-- Form -->
                         <div class="mb-4">
                             <label class="form-label" for="projectType">Type of Project</label>
-                            <input type="text" class="form-control form-control-lg" name="projectType" id="projectType" placeholder="e.g Ecommerce System" aria-label="e.g Ecommerce System" required>
-                            <span class="invalid-feedback">Project</span>
+                            <input type="text" class="form-control form-control-lg" name="TypeOfProject" id="projectType" placeholder="e.g Ecommerce System" aria-label="e.g Ecommerce System" required>
+                            <span asp-validation-for="TypeOfProject" class="text-danger"></span>
                         </div>
                         <!-- End Form -->
 
@@ -88,8 +90,8 @@
                                 <!-- Form -->
                                 <div class="mb-4">
                                     <label class="form-label" for="budget">Budget</label>
-                                    <input type="number" class="form-control form-control-lg" name="budget" id="budget" placeholder="Amount in $" aria-label="Amount in $" required>
-                                    <span class="invalid-feedback">Your budget</span>
+                                    <input type="number" class="form-control form-control-lg" name="Budget" id="budget" placeholder="Amount in $" aria-label="Amount in $" required>
+                                    <span asp-validation-for="Budget" class="text-danger"></span>
                                 </div>
                                 <!-- End Form -->
                             </div>
@@ -99,8 +101,8 @@
                                 <!-- Form -->
                                 <div class="mb-4">
                                     <label class="form-label" for="timeframe">Time Frame</label>
-                                    <input type="text" class="form-control form-control-lg" name="timeframe" id="Time Frame" placeholder="e.g 6 months" aria-label="e.g 6 months" required>
-                                    <span class="invalid-feedback">Expected time start to end</span>
+                                    <input type="text" class="form-control form-control-lg" name="TimeFrame" id="Time Frame" placeholder="e.g Months" aria-label="e.g Months" required>
+                                    <span asp-validation-for="TimeFrame" class="text-danger"></span>
                                 </div>
                                 <!-- End Form -->
                             </div>
@@ -109,9 +111,9 @@
                         <!-- End Row -->
                         <!-- Check -->
                         <div class="form-check mb-4">
-                            <input type="checkbox" class="form-check-input" id="signupHeroFormPrivacyCheck" name="signupFormPrivacyCheck" required>
+                            <input type="checkbox" class="form-check-input" id="signupHeroFormPrivacyCheck" name="AcceptedPrivacy" value="True" required>
                             <label class="form-check-label small" for="signupHeroFormPrivacyCheck"> By submitting this form I have read and acknowledged the <a asp-controller="Home" asp-action="Privacy" >Privacy Policy</a></label>
-                            <span class="invalid-feedback">Please accept our Privacy Policy.</span>
+                            <span asp-validation-for="AcceptedPrivacy" class="text-danger"></span>
                         </div>
                         <!-- End Check -->
 
